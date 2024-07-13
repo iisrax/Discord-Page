@@ -1,0 +1,345 @@
+@import url(./global.css);
+
+body {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr) 1.4fr 0.2fr;
+    grid-template-areas: 
+        "header"
+        "section1"
+        "section2"
+        "section3"
+        "section4"
+        "footer";
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    grid-area: header;
+    background-image: url(../images/Header-Background.png);
+    background-size: cover;
+    background-color: #391DF2;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+header .header-text {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: #FFFFFF;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: #FFFFFF;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.buttons button {
+    padding: 0 4rem;
+    border-radius: 50px;
+    border: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    box-shadow: 0 0 35px rgba(76, 0, 130, 0.5);
+}
+
+.buttons #white-b p {
+    color: #23272A;
+    font-weight: normal;
+    transition: color 0.3s;
+}
+
+.buttons #white-b:hover p {
+    color: #5865f2;
+}
+
+.buttons #dark-b {
+    background-color: #23272A;
+    color: #FFFFFF;
+}
+
+/* sections */
+section h1 {
+    font-size: 3rem;
+    color: #23272A;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1.25rem;
+    color: #23272A;
+    line-height: 1.5;
+}
+
+.section1 {
+    grid-area: section1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "section1-image section1-text";
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #FFFFFF;
+}
+
+.section1 .image {
+    grid-area: section1-image;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.section1 .text {
+    grid-area: section1-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: flex-start;
+    max-width: 70%;
+}
+
+.section2 {
+    grid-area: section2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "section2-text section2-image";
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #F6F6F6;
+}
+
+.section2 .image {
+    grid-area: section2-image;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section2 .text {
+    grid-area: section2-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: flex-end;
+    max-width: 70%;
+}
+
+.section3 {
+    grid-area: section3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "section3-image section3-text";
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #FFFFFF;
+}
+
+.section3 .image {
+    grid-area: section3-image;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.section3 .text {
+    grid-area: section3-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: flex-start;
+    max-width: 70%;
+}
+
+.section4 {
+    grid-area: section4;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0;
+    padding: 1rem;
+    background-color: #F6F6F6;
+}
+
+.section4 .text {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.section4 .image {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23272A;
+}
+
+/*Responsividade mobile*/
+@media screen and (max-width: 1280px) {
+    header {
+        padding: 0;
+        background-position: center;
+    }
+
+    header .header-text {
+        text-align: start;
+        max-width: 60%;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: auto;
+        padding: 0 12rem;
+    }
+
+    section h1 {
+        font-size: 2rem;
+    }
+
+    section p {
+        font-size: 1.1rem;
+    }
+
+    .section1, .section2, .section3 {
+        gap: 0;
+    }
+
+    .section1 .text,
+    .section2 .text,
+    .section3 .text {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        grid-template-rows: auto;
+    }
+
+    header {
+        min-height: 400px;
+        padding: 1rem;
+    }
+
+    header .header-text {
+        max-width: 80%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        text-align: start;
+    }
+
+    header p {
+        text-align: start;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .buttons p {
+        text-align: center;
+    }
+
+    .buttons button {
+        padding: 0 2rem;
+    }
+
+    .section1, .section2, .section3 {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 1.5rem 0;
+    }
+
+    .section1 .image, .section2 .image, .section3 .image {
+        justify-content: center;
+    }
+
+    section h1 {
+        font-size: 1.5rem;
+        max-width: 95%;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    .section1 .text, .section2 .text, .section3 .text {
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: start;
+    }
+
+    .section4 {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    .section4 .text {
+        text-align: start;
+        max-width: 80%;
+    }
+
+    .section4 .text h1 {
+        font-size: 1.8rem;
+    }
+
+    .section4 .image {
+        padding-bottom: 1rem;
+    }
+
+    footer img {
+        padding: 2rem;
+        max-width: 50%;
+    }
+}
